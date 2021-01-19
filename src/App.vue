@@ -1,30 +1,38 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <the-header></the-header>
+  <Sidebar></Sidebar>
+  <section id="container">
+    <router-view></router-view>
+  </section>
+  <TheFooter></TheFooter>
 </template>
 
+<script lang="ts">
+import TheHeader from "./components/layout/TheHeader.vue";
+import Sidebar from "./components/layout/Sidebar.vue";
+import TheFooter from "./components/layout/TheFooter.vue";
+export default {
+  components: { Sidebar, TheHeader, TheFooter }
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+body {
+  font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#container {
+  margin-left: 200px;
+  background: $background;
+  margin-left: 200px;
+  display: flex;
+  justify-content: center;
 }
 </style>

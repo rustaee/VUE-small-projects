@@ -1,0 +1,11 @@
+$primary-color: #333;
+$secondary-color: #ddd;
+$headlines-color: #a2a;
+$background: #fff;
+$sidebar: #9131ff;
+
+@mixin error-box{
+    border: 1px solid red;
+    background-color: #a11;
+    color: #fff;
+}
