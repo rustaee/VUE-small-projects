@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../pages/Home.vue";
+import ProgressBar from "../pages/ProgressBar.vue"
+import ExpandingCards from "../pages/ExpandingCards.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,7 +20,12 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/expandingcards",
-    component: () => import("../pages/ExpandingCards.vue")
+    component: ExpandingCards
+  },
+  {
+    path: "/progress",
+    name: "Progress",
+    component: ProgressBar
   }
 ];
 

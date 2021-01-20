@@ -5,6 +5,5 @@
 <style lang="scss" scoped>
 header {
   height: 10vh;
-  background: $sidebar;
 }
 </style>

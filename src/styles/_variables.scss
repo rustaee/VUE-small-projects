@@ -1,11 +1,20 @@
 $primary-color: #333;
 $secondary-color: #ddd;
 $headlines-color: #a2a;
-$background: #fff;
-$sidebar: #9131ff;
+$main-background: #fff;
+$body: #9131ff;
+$progress: #a0a;
+$inactivebg: #e0e0e0;
 
 @mixin error-box{
     border: 1px solid red;
     background-color: #a11;
     color: #fff;
+}
+
+@mixin transition($propery) {   
+        -webkit-transition: $propery;
+        -moz-transition: $propery;
+        -o-transition: $propery;
+        transition: $propery;    
 }

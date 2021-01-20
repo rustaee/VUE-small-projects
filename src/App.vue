@@ -2,7 +2,11 @@
   <the-header></the-header>
   <Sidebar></Sidebar>
   <section id="container">
-    <router-view></router-view>
+    <router-view v-slot="{ Component }">
+      <transition name="slide" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </section>
   <TheFooter></TheFooter>
 </template>
@@ -26,13 +30,28 @@ export default {
 body {
   font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
+  background-color: $body;
 }
 
 #container {
   margin-left: 200px;
-  background: $background;
+  background: $main-background;
   margin-left: 200px;
+  margin-right: 50px;
   display: flex;
   justify-content: center;
+  min-height: 80vh;
+  border-radius: 45px;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateY(3%);
 }
 </style>
