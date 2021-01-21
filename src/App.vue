@@ -1,30 +1,51 @@
 <template>
-  <the-header></the-header>
-  <Sidebar></Sidebar>
-  <section id="container" @click="changeMenuStatus()">
-    <router-view v-slot="{ Component }">
-      <transition name="slide" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
-  </section>
-  <TheFooter></TheFooter>
+  <div class="rotate-container" :class="{ 'show-nav': navigation }">
+    <!-- Header -->
+    <the-header :navigation="navigation" @show-nav="showNav"></the-header>
+
+    <!-- Project List -->
+    <Sidebar></Sidebar>
+
+    <section id="container" @click="changeMenuStatus()">
+      <router-view v-slot="{ Component }">
+        <transition name="slide" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </section>
+
+    <!-- Footer -->
+    <TheFooter></TheFooter>
+  </div>
+
+  <!-- Navigation Menu -->
+  <TheNavigation :navigation="navigation"></TheNavigation>
 </template>
 
 <script lang="ts">
 import TheHeader from "./components/layout/TheHeader.vue";
 import Sidebar from "./components/layout/Sidebar.vue";
 import TheFooter from "./components/layout/TheFooter.vue";
+import TheNavigation from "./components/layout/TheNavigation.vue";
 export default {
-  components: { Sidebar, TheHeader, TheFooter },
+  components: { Sidebar, TheHeader, TheFooter, TheNavigation },
+  data() {
+    return {
+      navigation: false
+    };
+  },
   methods: {
     changeMenuStatus() {
       this.$store.commit("menuStatus", false);
+    },
+    showNav(status) {
+      this.navigation = status;
     }
   },
   watch: {
     $route() {
       this.$store.commit("menuStatus", false);
+      this.navigation = false;
     }
   }
 };
@@ -40,7 +61,8 @@ export default {
 body {
   font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
-  background-color: $body;
+  background-color: $behind-rotate;
+  overflow-x: hidden;
 }
 
 #container {
@@ -64,6 +86,19 @@ body {
 .slide-leave-to {
   opacity: 0;
   transform: translateY(3%);
+}
+
+//Rotating Container
+.rotate-container {
+  transform-origin: top left;
+  background-color: $body;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+}
+.rotate-container.show-nav {
+  transform: rotate(-20deg);
+  background-color: $body;
 }
 
 @media screen and (max-width: 768px) {
