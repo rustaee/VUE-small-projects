@@ -74,4 +74,10 @@ header {
 .circle.rotate {
   transform: rotate(-70deg);
 }
+
+@media screen and (max-width: 768px) {
+  .circle-container {
+    display: none;
+  }
+}
 </style>
