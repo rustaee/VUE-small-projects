@@ -1,7 +1,7 @@
 <template>
   <the-header></the-header>
   <Sidebar></Sidebar>
-  <section id="container">
+  <section id="container" @click="changeMenuStatus()">
     <router-view v-slot="{ Component }">
       <transition name="slide" mode="out-in">
         <component :is="Component" />
@@ -16,7 +16,17 @@ import TheHeader from "./components/layout/TheHeader.vue";
 import Sidebar from "./components/layout/Sidebar.vue";
 import TheFooter from "./components/layout/TheFooter.vue";
 export default {
-  components: { Sidebar, TheHeader, TheFooter }
+  components: { Sidebar, TheHeader, TheFooter },
+  methods: {
+    changeMenuStatus() {
+      this.$store.commit("menuStatus", false);
+    }
+  },
+  watch: {
+    $route() {
+      this.$store.commit("menuStatus", false);
+    }
+  }
 };
 </script>
 

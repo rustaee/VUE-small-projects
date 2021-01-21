@@ -1,8 +1,8 @@
 <template>
+  <div id="bar-menu" @click="showMenu()">
+    <font-awesome-icon icon="bars" />
+  </div>
   <aside :style="{ height: dynamicHeight }">
-    <div id="bar-menu" @click="showMenu()">
-      <font-awesome-icon icon="bars" />
-    </div>
     <ul>
       <li><router-link to="/expandingcards">Expanding Cards</router-link></li>
       <li>
@@ -13,20 +13,38 @@
       <li></li>
     </ul>
   </aside>
+  {{ menuStatus }}
 </template>
 
 <script lang="ts">
 export default {
   data() {
     return {
-      dynamicHeight: ""
+      dynamicHeight: null,
+      responsiveMenu: false
     };
   },
   methods: {
     showMenu() {
-      this.dynamicHeight == "200px"
-        ? (this.dynamicHeight = "0")
-        : (this.dynamicHeight = "200px");
+      if (!this.responsiveMenu) {
+        this.dynamicHeight = "80vh";
+        this.responsiveMenu = true;
+      } else {
+        this.dynamicHeight = "0px";
+        this.responsiveMenu = false;
+      }
+      this.$store.commit("menuStatus", this.responsiveMenu);
+    },
+    closeMenu() {
+      this.dynamicHeight = "0px";
+      this.responsiveMenu = false;
+    }
+  },
+  computed: {
+    menuStatus() {
+      if (this.$store.state.responsiveMenu == false && window.innerWidth <= 768)
+        this.closeMenu();
+      return "";
     }
   }
 };
@@ -78,10 +96,14 @@ li {
     padding: 0;
     transition: height 0.5s ease;
     border-radius: 30px;
-    width: 300px;
+    width: 250px;
 
     a {
       color: #000;
+    }
+
+    a:hover {
+      color: #eee;
     }
 
     a.router-link-active {
