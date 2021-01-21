@@ -26,7 +26,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .panel {
-  background-size: auto;
+  background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
   height: 60vh;
