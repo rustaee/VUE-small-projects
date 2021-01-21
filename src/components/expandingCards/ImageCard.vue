@@ -26,7 +26,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .panel {
-  background-size: auto 100%;
+  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
   height: 60vh;
@@ -60,7 +60,8 @@ export default {
 
 @media screen and (max-width: 768px) {
   .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
+  .panel:nth-of-type(5),
+  .panel:nth-of-type(6) {
     display: none;
   }
 }

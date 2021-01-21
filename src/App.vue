@@ -42,6 +42,7 @@ body {
   justify-content: center;
   min-height: 80vh;
   border-radius: 45px;
+  position: relative;
 }
 
 .slide-enter-active,
@@ -53,5 +54,12 @@ body {
 .slide-leave-to {
   opacity: 0;
   transform: translateY(3%);
+}
+
+@media screen and (max-width: 768px) {
+  #container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 </style>

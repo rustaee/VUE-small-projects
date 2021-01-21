@@ -1,5 +1,8 @@
 <template>
-  <aside>
+  <aside :style="{ height: dynamicHeight }">
+    <div id="bar-menu" @click="showMenu()">
+      <font-awesome-icon icon="bars" />
+    </div>
     <ul>
       <li><router-link to="/expandingcards">Expanding Cards</router-link></li>
       <li>
@@ -11,6 +14,23 @@
     </ul>
   </aside>
 </template>
+
+<script lang="ts">
+export default {
+  data() {
+    return {
+      dynamicHeight: ""
+    };
+  },
+  methods: {
+    showMenu() {
+      this.dynamicHeight == "200px"
+        ? (this.dynamicHeight = "0")
+        : (this.dynamicHeight = "200px");
+    }
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 aside {
@@ -35,6 +55,46 @@ li {
   a.router-link-active {
     color: $body;
     background: $main-background;
+  }
+}
+
+#bar-menu {
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  color: $main-background;
+  visibility: hidden;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    z-index: 2;
+    background-color: $body;
+    opacity: 0.8;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: height 0.5s ease;
+    border-radius: 30px;
+    width: 300px;
+
+    a {
+      color: #000;
+    }
+
+    a.router-link-active {
+      background: none;
+      color: #fff;
+    }
+
+    a.router-link-active::before {
+      content: " >> ";
+    }
+  }
+  #bar-menu {
+    visibility: visible;
   }
 }
 </style>
