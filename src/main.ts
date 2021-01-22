@@ -5,12 +5,12 @@ import store from "./store";
 //Fontawsome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faBars, faTimes, faHome, faUserAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes, faHome, faUserAlt, faEnvelope, faSearch, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 
 //BaseUi Components
 import BaseCard from "./components/ui/BaseCard.vue"
 
-library.add(faBars,faTimes, faHome, faUserAlt, faEnvelope)
+library.add(faBars,faTimes, faHome, faUserAlt, faEnvelope, faSearch,faEnvelopeOpenText)
 createApp(App)
   .use(store)
   .use(router)

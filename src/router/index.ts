@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../pages/Home.vue";
 import ProgressBar from "../pages/ProgressBar.vue"
 import ExpandingCards from "../pages/ExpandingCards.vue"
+import BluryImage from "../pages/BluryImage.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -32,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/progress",
     name: "Progress",
     component: ProgressBar
+  },
+  {
+    path: "/blur",
+    name: "Blur",
+    component: BluryImage
   }
 ];
 

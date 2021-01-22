@@ -2,8 +2,11 @@
   <div id="bar-menu" @click="showMenu()">
     <font-awesome-icon icon="bars" />
   </div>
-  <aside :style="{ height: dynamicHeight }">
+  <aside :style="{ height: dynamicHeight, 'z-index': zIndex }">
     <ul>
+      <li>
+        <router-link :to="{ name: 'Blur' }">Blury Q/A</router-link>
+      </li>
       <li><router-link to="/expandingcards">Expanding Cards</router-link></li>
       <li>
         <router-link :to="{ name: 'Progress' }">Progress Bar</router-link>
@@ -21,7 +24,8 @@ export default {
   data() {
     return {
       dynamicHeight: null,
-      responsiveMenu: false
+      responsiveMenu: false,
+      zIndex: null
     };
   },
   methods: {
@@ -33,6 +37,7 @@ export default {
         this.dynamicHeight = "0px";
         this.responsiveMenu = false;
       }
+      this.zIndex = "2";
       this.$store.commit("menuStatus", this.responsiveMenu);
     },
     closeMenu() {
@@ -88,9 +93,9 @@ li {
 
 @media screen and (max-width: 768px) {
   aside {
-    z-index: 2;
+    z-index: 0;
     background-color: $body;
-    opacity: 0.8;
+    opacity: 0.9;
     height: 0;
     overflow: hidden;
     padding: 0;
@@ -112,7 +117,7 @@ li {
     }
 
     a.router-link-active::before {
-      content: " >> ";
+      content: " » ";
     }
   }
   #bar-menu {

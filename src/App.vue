@@ -59,7 +59,8 @@ export default {
 }
 
 body {
-  font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+  font-family: $font-family;
+  font-size: $font-size;
   margin: 0;
   background-color: $behind-rotate;
   overflow-x: hidden;
@@ -97,7 +98,7 @@ body {
   min-height: 100vh;
 }
 .rotate-container.show-nav {
-  transform: rotate(-20deg);
+  transform: rotate(-15deg);
   background-color: $body;
 }
 

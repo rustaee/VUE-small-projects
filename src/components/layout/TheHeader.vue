@@ -1,9 +1,13 @@
 <template>
   <header>
+    <!-- Will be shown in small screens -->
     <div class="nav">
+      <!-- Navigation Menu -->
       <ul>
         <li>
-          <router-link to="/"> <font-awesome-icon icon="home"/></router-link>
+          <router-link to="/contact">
+            <font-awesome-icon icon="envelope-open-text"
+          /></router-link>
         </li>
         <li>
           <router-link to="/about">
@@ -11,12 +15,28 @@
           /></router-link>
         </li>
         <li>
-          <router-link to="/contact">
-            <font-awesome-icon icon="envelope"
-          /></router-link>
+          <router-link to="/"> <font-awesome-icon icon="home"/></router-link>
         </li>
       </ul>
+
+      <!-- Search Icon -->
+      <div class="search-icon" @click="showSearchBox()">
+        <font-awesome-icon icon="search" />
+      </div>
+
+      <!-- Search Box -->
+      <div class="search">
+        <input
+          class="searchinput"
+          :class="{ active: active }"
+          type="text"
+          placeholder="Looking for something?"
+        />
+      </div>
     </div>
+    <!-- End Of Small Screen -->
+
+    <!-- Navigation trigger for Larg screens -->
     <div class="circle-container">
       <div class="circle" :class="{ rotate: rotate }">
         <font-awesome-icon class="open" icon="bars" @click="showNav(true)" />
@@ -32,13 +52,19 @@ export default {
   props: ["navigation"],
   data() {
     return {
-      rotate: false
+      rotate: false,
+      active: false
     };
   },
   methods: {
     showNav(status) {
       this.$emit("show-nav", status);
       this.rotate = status;
+    },
+    showSearchBox() {
+      this.active = !this.active;
+      const input = document.querySelector(".searchinput");
+      if (input) input.focus();
     }
   },
   watch: {
@@ -96,11 +122,67 @@ header {
 /* Navigation menu for small screen  */
 .nav {
   position: absolute;
-  right: 50px;
-  top: 15px;
-  visibility: hidden;
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  right: 70px;
+  top: 30%;
+  left: 3rem;
+
+  .search-icon {
+    font-size: 2rem;
+    color: $main-background;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .search {
+    position: relative;
+    width: 15rem;
+
+    input {
+      order: 3; /* to nove down in XS Screens */
+      -webkit-order: 3; /* Safari */
+      padding: 0px;
+      margin: 0 5px;
+      border: none;
+      color: $main-background;
+      background: linear-gradient(to right, $rotate-circle, $body);
+      transition: width 0.3s ease;
+      width: 0px;
+      height: 2.5rem;
+      position: relative;
+      right: 0;
+    }
+    .active {
+      width: 14.2rem;
+      padding: 0 7px;
+    }
+    ::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $body;
+      opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: $body;
+    }
+
+    ::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: $body;
+    }
+
+    input:focus {
+      outline: none;
+    }
+  }
+
   ul {
     margin: 0;
+    padding: 0;
+    display: none;
   }
 
   li {
@@ -119,8 +201,19 @@ header {
     display: none;
   }
 
-  .nav {
-    visibility: visible;
+  .nav ul {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  header {
+    height: 12vh;
+  }
+
+  .searchinput {
+    z-index: 2;
+    left: 5%;
   }
 }
 </style>
