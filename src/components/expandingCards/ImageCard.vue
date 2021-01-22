@@ -59,7 +59,7 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .panel:nth-of-type(4),
+  .panel:nth-of-type(7),
   .panel:nth-of-type(5),
   .panel:nth-of-type(6) {
     display: none;

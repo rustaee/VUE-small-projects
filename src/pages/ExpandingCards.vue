@@ -22,38 +22,44 @@ export default {
       images: [
         {
           id: 1,
-          title: "1 - Explolre The World",
+          title: "1 - Explore The World",
           url: "1.jpg",
           active: true
         },
         {
           id: 2,
-          title: "2 - Explolre The World",
+          title: "2 - Explore The World",
           url: "2.jpg",
           active: false
         },
         {
           id: 3,
-          title: "3 - Explolre The World",
+          title: "3 - Explore The World",
           url: "3.jpg",
           active: false
         },
         {
           id: 4,
-          title: "4 - Explolre The World",
+          title: "4 - Explore The World",
           url: "4.jpg",
           active: false
         },
         {
           id: 5,
-          title: "5 - Explolre The World",
+          title: "5 - Explore The World",
           url: "5.jpg",
           active: false
         },
         {
           id: 6,
-          title: "6 - Explolre The World",
+          title: "6 - Explore The World",
           url: "6.jpg",
+          active: false
+        },
+        {
+          id: 7,
+          title: "7 - Explore The World",
+          url: "7.jpg",
           active: false
         }
       ]

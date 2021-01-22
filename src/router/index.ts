@@ -7,6 +7,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
+    //redirect: "/expandingcards",
     component: Home
   },
   {
