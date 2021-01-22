@@ -69,7 +69,6 @@ body {
 #container {
   margin-left: 200px;
   background: $main-background;
-  margin-left: 200px;
   margin-right: 50px;
   display: flex;
   justify-content: center;
@@ -105,7 +104,7 @@ body {
 @media screen and (max-width: 768px) {
   #container {
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 20px;
   }
 }
 </style>
