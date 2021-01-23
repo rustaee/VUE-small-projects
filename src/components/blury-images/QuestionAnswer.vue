@@ -47,10 +47,17 @@ export default {
       return ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
     },
     changeItem() {
+      this.loading = 0;
+      this.int = null;
+      this.loadOpacity = 1;
+      this.blur = 70;
       this.$emit("change-question");
     }
   },
   created() {
+    this.int = setInterval(() => this.blurring(), 40);
+  },
+  updated() {
     this.int = setInterval(() => this.blurring(), 40);
   }
 };
