@@ -63,8 +63,8 @@ export default {
     },
     showSearchBox() {
       this.active = !this.active;
-      const input = document.querySelector(".searchinput");
-      if (input) input.focus();
+      // const input = document.querySelector(".searchinput");
+      // if (input) input.focus();
     }
   },
   watch: {
