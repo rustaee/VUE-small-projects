@@ -9,11 +9,13 @@ import { faBars, faTimes, faHome, faUserAlt, faEnvelope, faSearch, faEnvelopeOpe
 
 //BaseUi Components
 import BaseCard from "./components/ui/BaseCard.vue"
+import BaseButton from "./components/ui/BaseButton.vue"
 
 library.add(faBars,faTimes, faHome, faUserAlt, faEnvelope, faSearch,faEnvelopeOpenText)
 createApp(App)
   .use(store)
   .use(router)
   .component('base-card' , BaseCard)
+  .component('base-button' , BaseButton)
   .component('font-awesome-icon', FontAwesomeIcon)
   .mount("#app");
