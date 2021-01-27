@@ -78,6 +78,7 @@ export default {
   width: 43%;
   height: 50vh;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .answer-image {

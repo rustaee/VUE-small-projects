@@ -5,8 +5,8 @@
         <img class="avatar" src="/assets/avatar.jpg" />
         <h1>Welcome to my portfolio</h1>
         <p>
-          My name is Mahdieh. I'm Practicing to be a front-end Developer and
-          here you can see some of my small projects.
+          My name is Mahdieh. I'm a front-end Developer and here you can see
+          some of my small projects in Vue.js
         </p>
         <p>Wish you a happy time!</p>
         <div class="signiture">

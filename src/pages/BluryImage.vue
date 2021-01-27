@@ -75,10 +75,5 @@ export default {
   #blury-image {
     flex-direction: column;
   }
-
-  .question,
-  .answer {
-    width: 90%;
-  }
 }
 </style>

@@ -38,6 +38,10 @@ const routes: Array<RouteRecordRaw> = [
     path: "/blur",
     name: "Blur",
     component: BluryImage
+  },{
+    path: "/scrollanimation",
+    name: "Scroll",
+    component: () => import("@/pages/ScrollAnimation.vue")
   }
 ];
 

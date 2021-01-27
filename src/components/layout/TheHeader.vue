@@ -37,13 +37,19 @@
     <!-- End Of Small Screen -->
 
     <!-- Navigation trigger for Larg screens -->
-    <div class="circle-container">
-      <div class="circle" :class="{ rotate: rotate }">
-        <font-awesome-icon class="open" icon="bars" @click="showNav(true)" />
+    <teleport to="body">
+      <div class="circle-container">
+        <div class="circle" :class="{ rotate: rotate }">
+          <font-awesome-icon class="open" icon="bars" @click="showNav(true)" />
 
-        <font-awesome-icon class="close" icon="times" @click="showNav(false)" />
+          <font-awesome-icon
+            class="close"
+            icon="times"
+            @click="showNav(false)"
+          />
+        </div>
       </div>
-    </div>
+    </teleport>
   </header>
 </template>
 
@@ -53,7 +59,7 @@ export default {
   data() {
     return {
       rotate: false,
-      active: false
+      active: false //Search Box
     };
   },
   methods: {
@@ -63,8 +69,6 @@ export default {
     },
     showSearchBox() {
       this.active = !this.active;
-      // const input = document.querySelector(".searchinput");
-      // if (input) input.focus();
     }
   },
   watch: {
@@ -85,6 +89,7 @@ header {
   position: fixed;
   top: -100px;
   left: -100px;
+  z-index: 5;
 }
 
 .circle {
@@ -116,7 +121,7 @@ header {
 }
 
 .circle.rotate {
-  transform: rotate(-70deg);
+  transform: rotate(-90deg);
 }
 
 /* Navigation menu for small screen  */
@@ -141,7 +146,7 @@ header {
     width: 15rem;
 
     input {
-      order: 3; /* to nove down in XS Screens */
+      order: 3; /* to move down in XS Screens */
       -webkit-order: 3; /* Safari */
       padding: 0px;
       margin: 0 5px;

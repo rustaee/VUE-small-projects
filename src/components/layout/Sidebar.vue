@@ -5,6 +5,9 @@
   <aside :style="{ height: dynamicHeight, 'z-index': zIndex }">
     <ul>
       <li>
+        <router-link :to="{ name: 'Scroll' }">Scroll Animation</router-link>
+      </li>
+      <li>
         <router-link :to="{ name: 'Blur' }">Blury Facts</router-link>
       </li>
       <li><router-link to="/expandingcards">Expanding Cards</router-link></li>

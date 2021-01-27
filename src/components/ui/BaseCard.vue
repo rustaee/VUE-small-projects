@@ -10,6 +10,6 @@
   box-shadow: 0 2px 8px #e0e0e0;
   padding: 1rem;
   margin: 2rem auto;
-  max-width: 40rem;
+  max-width: 90%;
 }
 </style>

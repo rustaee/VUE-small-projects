@@ -97,7 +97,7 @@ body {
   min-height: 100vh;
 }
 .rotate-container.show-nav {
-  transform: rotate(-15deg);
+  transform: rotate(-10deg);
   background-color: $body;
 }
 
