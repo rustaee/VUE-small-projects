@@ -15,12 +15,12 @@
   z-index: 100;
   width: 100%;
   height: 100%;
-  color: $main-background;
+  color: $body;
   top: 0;
 }
 
 .load-background {
-  background-color: $body;
+  background-color: #000;
   opacity: 40%;
   width: 100%;
   height: 100%;
