@@ -68,7 +68,7 @@ export default {
     }
   },
   mounted() {
-    setTimeout(this.fetchData, 2000);
+    setTimeout(this.fetchData, 10000);
 
     window.addEventListener("scroll", this.checkBoxes);
     this.checkBoxes();
