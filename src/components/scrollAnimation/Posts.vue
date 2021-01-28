@@ -21,7 +21,7 @@ export default {
 
 .thumb {
   float: right;
-  flex: 40%;
+  width: 40%;
 
   img {
     width: 90%;
@@ -34,14 +34,24 @@ export default {
 }
 
 @media screen and(max-width: 768px) {
+  h2 {
+    font-size: 1rem;
+    padding: 15px 0;
+  }
   .thumb {
-    float: none;
+    width: 50%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .desc {
+    display: none;
   }
 }
 
 @media screen and(min-width: 1200px) {
   .desc {
-    font-size: 1rem;
     min-height: 200px;
   }
 }

@@ -5,7 +5,7 @@
       ><h1>Retrieving Data from API</h1></base-loading
     >
 
-    <h1>Scroll to see the animation</h1>
+    <h1 v-if="blink < 3" :class="{ blink: blink == 2 }">Scroll to see the animation</h1>
     <post-box
       v-for="post in data"
       :title="post.strCategory"
@@ -32,7 +32,8 @@ export default {
       loading: true,
       data: [],
       showClass: false,
-      error: null
+      error: null,
+      blink: 1 //to deactive the animation after scrolling
     };
   },
   methods: {
@@ -55,6 +56,7 @@ export default {
         });
     },
     checkBoxes() {
+      this.blink++; //to deactive the blink animation
       const trigger = (window.innerHeight / 5) * 4;
       const boxes = document.querySelectorAll(".news");
       boxes.forEach(box => {
@@ -78,6 +80,7 @@ export default {
 <style lang="scss" scoped>
 #scroll {
   width: 90%;
+  text-align: center;
 }
 .news {
   transform: translateX(400%);
@@ -91,9 +94,29 @@ export default {
   transform: translateX(0);
 }
 
+h1.blink {
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @media screen and(min-width: 1200px) {
   #scroll {
     width: 80%;
+  }
+}
+
+@media screen and(max-width: 768px) {
+  h1 {
+    font-size: 1rem;
   }
 }
 </style>

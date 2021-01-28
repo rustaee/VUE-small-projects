@@ -107,8 +107,12 @@ export default {
 
 @media screen and (max-width: 768px) {
   .question,
-  .answer {
+  .card.answer {
     width: 90%;
+  }
+
+  .question {
+    height: auto;
   }
 }
 </style>
