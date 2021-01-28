@@ -21,7 +21,7 @@
 
 .load-background {
   background-color: #000;
-  opacity: 40%;
+  opacity: 50%;
   width: 100%;
   height: 100%;
 }

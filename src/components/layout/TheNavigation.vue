@@ -40,10 +40,11 @@ nav {
   color: #fff;
   left: 0;
   bottom: 40px;
+  z-index: -1;
 
   ul {
     list-style: none;
-    padding-left: 30px;
+    padding-left: 20px;
 
     li {
       text-transform: uppercase;
@@ -64,12 +65,12 @@ nav {
     }
 
     li + li {
-      margin-left: 15px;
+      margin-left: 10px;
       transform: translateX(-150%);
     }
 
     li + li + li {
-      margin-left: 30px;
+      margin-left: 15px;
       transform: translateX(-200%);
     }
   }
@@ -78,5 +79,9 @@ nav {
 nav.active li {
   transform: translateX(0);
   transition-delay: 0.2s;
+}
+
+nav.active {
+  z-index: 10;
 }
 </style>

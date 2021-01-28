@@ -18,8 +18,10 @@
     <TheFooter></TheFooter>
   </div>
 
-  <!-- Navigation Menu -->
+  <!-- Bottom Navigation Menu -->
+  <!-- <teleport to="body"> -->
   <TheNavigation :navigation="navigation"></TheNavigation>
+  <!-- </teleport> -->
 </template>
 
 <script lang="ts">
@@ -77,6 +79,7 @@ body {
   position: relative;
 }
 
+//Route changing animation
 .slide-enter-active,
 .slide-leave-active {
   transition: opacity 0.5s, transform 0.5s;
@@ -87,24 +90,27 @@ body {
   opacity: 0;
   transform: translateY(3%);
 }
+//End of Route changing animation
 
-//Rotating Container
+//Rotating Container (whole page)
 .rotate-container {
   transform-origin: top left;
   background-color: $body;
   transition: transform 0.5s linear;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 94vh;
 }
 .rotate-container.show-nav {
-  transform: rotate(-10deg);
+  transform: rotate(-13deg);
   background-color: $body;
 }
+//End of Rotating Container
 
 @media screen and (max-width: 768px) {
   #container {
     margin-left: 10px;
     margin-right: 20px;
+    margin-top: 65px;
   }
 }
 </style>

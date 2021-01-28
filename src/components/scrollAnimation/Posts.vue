@@ -31,12 +31,13 @@ export default {
 .desc {
   font-size: 0.75rem;
   min-height: 150px;
+  text-align: justify;
 }
 
-@media screen and(max-width: 768px) {
+@media screen and(max-width: 550px) {
   h2 {
     font-size: 1rem;
-    padding: 15px 0;
+    padding: 20px 0;
   }
   .thumb {
     width: 50%;

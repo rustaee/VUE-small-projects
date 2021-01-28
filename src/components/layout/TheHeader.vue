@@ -206,6 +206,15 @@ header {
     display: none;
   }
 
+  header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 67px;
+    z-index: 3;
+    background: $body;
+  }
+
   .nav ul {
     display: inline-block;
   }
@@ -213,7 +222,7 @@ header {
 
 @media screen and (max-width: 520px) {
   header {
-    height: 12vh;
+    height: 68px;
   }
 
   .searchinput {

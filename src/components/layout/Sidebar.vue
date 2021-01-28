@@ -1,8 +1,14 @@
 <template>
+  <!-- Hamburger menu icon -->
   <div id="bar-menu" @click="showMenu()">
     <font-awesome-icon icon="bars" />
   </div>
-  <aside :style="{ height: dynamicHeight, 'z-index': zIndex }">
+  <!-- End of Hamburger menu icon -->
+
+  <aside :class="{ responsive: responsiveMenu }" :style="{ 'z-index': zIndex }">
+    <!-- Close Icon when responsive menu is open -->
+    <font-awesome-icon icon="times" class="close" @click="showMenu()" />
+    <!-- End of close icon -->
     <ul>
       <li>
         <router-link :to="{ name: 'Scroll' }">Scroll Animation</router-link>
@@ -18,29 +24,22 @@
       <li></li>
       <li></li>
     </ul>
+    {{ menuStatus }}
   </aside>
-  {{ menuStatus }}
 </template>
 
 <script lang="ts">
 export default {
   data() {
     return {
-      dynamicHeight: null,
       responsiveMenu: false,
-      zIndex: null
+      zIndex: 0
     };
   },
   methods: {
     showMenu() {
-      if (!this.responsiveMenu) {
-        this.dynamicHeight = "80vh";
-        this.responsiveMenu = true;
-      } else {
-        this.dynamicHeight = "0px";
-        this.responsiveMenu = false;
-      }
-      this.zIndex = "2";
+      this.responsiveMenu = !this.responsiveMenu;
+      this.zIndex = 5;
       this.$store.commit("menuStatus", this.responsiveMenu);
     },
     closeMenu() {
@@ -59,8 +58,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.close {
+  color: #fff;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  font-size: 1.3rem;
+  display: none;
+  cursor: pointer;
+}
 aside {
-  width: 200px;
+  width: 201px;
   padding: 25px 0;
   position: absolute;
   height: 80vh;
@@ -92,20 +100,29 @@ li {
   visibility: hidden;
   font-size: 2rem;
   cursor: pointer;
+  z-index: 3;
 }
 
 @media screen and (max-width: 768px) {
   aside {
-    z-index: 0;
-    background-color: $body;
-    opacity: 0.9;
-    height: 0;
-    overflow: hidden;
+    z-index: -1;
+    background: $sidebar;
     padding: 0;
-    transition: height 0.5s ease;
-    border-radius: 30px;
-    width: 250px;
+    transform: translateX(-300px);
+    transition: transform 0.5s ease;
+    width: 190px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    -moz-box-shadow: 10px 0 30px #000;
+    -webkit-box-shadow: 10px 0 30px #000;
+    box-shadow: 10px 0 30px #888;
 
+    ul {
+      position: relative;
+      top: 20px;
+      padding: 10px;
+    }
     a {
       color: #000;
     }
@@ -123,6 +140,15 @@ li {
       content: " » ";
     }
   }
+
+  .responsive {
+    transform: translateX(0);
+  }
+
+  .close {
+    display: inline-block;
+  }
+
   #bar-menu {
     visibility: visible;
   }
