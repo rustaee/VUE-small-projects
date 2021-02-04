@@ -9,6 +9,9 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "Home",
     //redirect: "/expandingcards",
+    meta: {
+      layout: 'intro'
+    },
     component: Home
   },
   {
@@ -27,21 +30,40 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/expandingcards",
-    component: ExpandingCards
+    component: ExpandingCards,
+    meta:{
+      layout: 'effect'
+    }
   },
   {
     path: "/progress",
     name: "Progress",
-    component: ProgressBar
+    component: ProgressBar,
+    meta: {
+      layout: 'effect'
+    }
   },
   {
     path: "/blur",
     name: "Blur",
-    component: BluryImage
-  },{
+    component: BluryImage,
+    meta: {
+      layout: 'game'
+    }
+  },
+  {
     path: "/scrollanimation",
     name: "Scroll",
-    component: () => import("@/pages/ScrollAnimation.vue")
+    component: () => import("@/pages/ScrollAnimation.vue"),
+    meta: {
+      layout: 'effect'
+    }
+  },
+
+  {
+    path: "/:catchAll(.*)",
+    name: "404",
+    component: () => import("@/pages/404.vue")
   }
 ];
 

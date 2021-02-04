@@ -14,11 +14,6 @@ $font-family: 'Poppins', sans-serif;
 $font-color: #333;
 $sidebar:  #555;
 
-@mixin error-box{
-    border: 1px solid red;
-    background-color: #a11;
-    color: #fff;
-}
 
 @mixin transition($propery) {   
         -webkit-transition: $propery;
@@ -26,3 +21,4 @@ $sidebar:  #555;
         -o-transition: $propery;
         transition: $propery;    
 }
+

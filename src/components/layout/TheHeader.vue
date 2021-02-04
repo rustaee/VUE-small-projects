@@ -158,6 +158,7 @@ header {
       height: 2.5rem;
       position: relative;
       right: 0;
+      caret-color: transparent;
     }
     .active {
       width: 14.2rem;
