@@ -3,6 +3,7 @@ import Home from "../pages/Home.vue";
 import ProgressBar from "../pages/ProgressBar.vue"
 import ExpandingCards from "../pages/ExpandingCards.vue"
 import BluryImage from "../pages/BluryImage.vue"
+import GamesHome from "../pages/GamesHome.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,6 +14,14 @@ const routes: Array<RouteRecordRaw> = [
       layout: 'intro'
     },
     component: Home
+  },
+  {
+    path: "/games",
+    name : "Games",
+    component: GamesHome,
+    meta: {
+      layout: 'game'
+    }
   },
   {
     path: "/about",

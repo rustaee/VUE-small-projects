@@ -14,7 +14,7 @@
       @mouseleave="changeClass(false)"
     >
       <h1>Play Small Games</h1>
-      <a href="#" class="btn">Let's GO!</a>
+      <router-link :to="{ name: 'Games' }" class="btn">let's go!</router-link>
     </div>
   </div>
 </template>
@@ -85,8 +85,8 @@ h1 {
     background-position: right;
 
     .btn:hover {
-      background-color: rgba(247, 195, 55, 1);
-      border-color: rgba(247, 195, 55, 1);
+      background-color: #ffd800;
+      border-color: #ffd800;
     }
 
     &::before {
@@ -106,8 +106,8 @@ h1 {
     background-position: right bottom;
 
     .btn:hover {
-      background-color: rgba(28, 122, 28, 1);
-      border-color: rgba(28, 122, 28, 1);
+      background-color: #ed145b;
+      border-color: #ed145b;
     }
 
     &::before {

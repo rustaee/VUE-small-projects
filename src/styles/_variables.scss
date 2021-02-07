@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 $primary-color: #333;
 $secondary-color: #ddd;
 $headlines-color: #a2a;
@@ -22,3 +26,45 @@ $sidebar:  #555;
         transition: $propery;    
 }
 
+@mixin base-btn($color){
+    border: none;
+    padding: 10px 30px;
+    background: $color;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+    cursor: pointer;
+
+    &:focus{
+        outline: none;
+    }
+}
+// ********      Games Layout     *************//
+$game-body: #fff;
+$game-font-color: #5a5a5a;
+$game-headline-font:'Play', sans-serif;
+$game-font-family: 'Roboto', sans-serif;
+$game-base-color: #ed145b;
+$game-font: 'Megrim', cursive; 
+$game-light-color: #fff;
+$game-footer-background: #2d2d2d;
+$game-gray-container: #f4f4f4;
+$game-inactive-btn: #f4f4f4;
+$game-inactive-border: #f1f1f1;
+
+%flex-column{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+%flex-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
