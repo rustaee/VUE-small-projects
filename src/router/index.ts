@@ -4,15 +4,12 @@ import ProgressBar from "../pages/ProgressBar.vue"
 import ExpandingCards from "../pages/ExpandingCards.vue"
 import BluryImage from "../pages/BluryImage.vue"
 import GamesHome from "../pages/GamesHome.vue"
+import EffectsHome from "../pages/EffectsHome.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
-    //redirect: "/expandingcards",
-    meta: {
-      layout: 'intro'
-    },
     component: Home
   },
   {
@@ -24,11 +21,16 @@ const routes: Array<RouteRecordRaw> = [
     }
   },
   {
+    path: "/effects",
+    name : "Effects",
+    component: EffectsHome,
+    meta: {
+      layout: 'effect'
+    }
+  },
+  {
     path: "/about",
     name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../pages/About.vue")
   },

@@ -66,7 +66,7 @@
       position: absolute;
       right: 50%;
       transform: translateX(50%) translateY(55%);
-      border: 1px solid #f1f1f1;
+      border: 1px solid #ccc;
 
       &:hover {
         border-color: $game-base-color;

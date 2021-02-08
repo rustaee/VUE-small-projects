@@ -4,7 +4,7 @@
       <nav>
         <ul>
           <li>
-            <router-link :to="{ name: 'Games' }">Home</router-link>
+            <router-link :to="{ name: 'Home' }">Home</router-link>
           </li>
           <li>
             <router-link :to="{ name: 'Home' }">About</router-link>
@@ -13,7 +13,7 @@
             <router-link :to="{ name: 'Home' }">Contact</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'Home' }">Games List</router-link>
+            <router-link :to="{ name: 'Games' }">Games List</router-link>
           </li>
           <li>
             <router-link :to="{ name: 'Home' }">Effects</router-link>
@@ -37,7 +37,7 @@
 </template>
 <style lang="scss" scoped>
 header {
-  background: url(../../../assets/header.jpg) right bottom no-repeat,
+  background: url(../../../assets/game-header.jpg) right bottom no-repeat,
     linear-gradient(to right, #141414 70%, #000 80%);
   background-size: auto 100%;
   width: 100vw;

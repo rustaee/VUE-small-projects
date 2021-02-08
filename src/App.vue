@@ -11,8 +11,8 @@ const defaultLayout = "default";
 export default {
   computed: {
     layout() {
-      //layout name has been defined in router file-meta key
-      return (this.$route.meta.layout || defaultLayout) + "-template";
+      //layout name has been defined in router file  , meta key
+      return (this.$route.meta.layout || defaultLayout) + "-layout";
     }
   }
 };
@@ -23,11 +23,14 @@ export default {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: $font-family;
   font-size: $font-size;
   margin: 0;
-  background-color: $behind-rotate;
   overflow-x: hidden;
 }
 </style>

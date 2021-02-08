@@ -18,33 +18,22 @@ $font-family: 'Poppins', sans-serif;
 $font-color: #333;
 $sidebar:  #555;
 
+// ********      Effects Layout     *************//
+$effect-body-bg: #000a1c;
+$effect-light-bg: #fff;
+$effect-base-color: #ffd800;
+$effect-footer-bg: #131a2d;
+$effect-font-color: #fff;
+$effect-light-font-color: #191b29;
+$effect-dark-font-color: #7c7e99;
+$effect-font-family: 'Roboto', sans-serif;
 
-@mixin transition($propery) {   
-        -webkit-transition: $propery;
-        -moz-transition: $propery;
-        -o-transition: $propery;
-        transition: $propery;    
-}
-
-@mixin base-btn($color){
-    border: none;
-    padding: 10px 30px;
-    background: $color;
-    border-radius: 20px;
-    -moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-    cursor: pointer;
-
-    &:focus{
-        outline: none;
-    }
-}
 // ********      Games Layout     *************//
-$game-body: #fff;
+$game-body: #f4f4f4;
 $game-font-color: #5a5a5a;
+$game-base-color: #ed145b;
 $game-headline-font:'Play', sans-serif;
 $game-font-family: 'Roboto', sans-serif;
-$game-base-color: #ed145b;
 $game-font: 'Megrim', cursive; 
 $game-light-color: #fff;
 $game-footer-background: #2d2d2d;
@@ -52,19 +41,47 @@ $game-gray-container: #f4f4f4;
 $game-inactive-btn: #f4f4f4;
 $game-inactive-border: #f1f1f1;
 
+// ********      Base mixins and  extends  *************//
+
+@mixin transition($propery) {   
+    -webkit-transition: $propery;
+    -moz-transition: $propery;
+    -o-transition: $propery;
+    transition: $propery;    
+}
+
+@mixin border-radius($size){    
+    border-radius: $size;
+    -moz-border-radius: $size;
+    -webkit-border-radius: $size;
+}
+
+@mixin base-btn($color){
+border: none;
+@include border-radius(20px);
+padding: 10px 30px;
+background: $color;
+cursor: pointer;
+
+&:focus{
+    outline: none;
+}
+}
+
+
 %flex-column{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    flex-wrap: wrap;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-direction: column;
+flex-wrap: wrap;
 }
 
 
 %flex-row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-direction: row;
+flex-wrap: wrap;
 }
