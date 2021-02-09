@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../pages/Home.vue";
 import ProgressBar from "../pages/ProgressBar.vue"
 import ExpandingCards from "../pages/ExpandingCards.vue"
-import BluryImage from "../pages/BluryImage.vue"
+import BluryImage from "../pages/games/BluryImage.vue"
 import GamesHome from "../pages/GamesHome.vue"
 import EffectsHome from "../pages/EffectsHome.vue"
 

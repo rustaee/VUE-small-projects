@@ -1,6 +1,9 @@
 <template>
   <header>
     <section class="header-content">
+      <div class="burgermenu">
+        <font-awesome-icon class="open" icon="bars" />
+      </div>
       <nav>
         <ul>
           <li>
@@ -16,7 +19,7 @@
             <router-link :to="{ name: 'Games' }">Games List</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'Home' }">Effects</router-link>
+            <router-link :to="{ name: 'Effects' }">Effects</router-link>
           </li>
         </ul>
       </nav>
@@ -115,9 +118,34 @@ header {
     }
   }
 
-  @media screen and (max-width: 768px) {
-    nav {
+  .burgermenu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 20vh;
+    background-size: cover;
+  }
+  nav {
+    display: none;
+  }
+
+  .header-content {
+    width: 90vw;
+    position: relative;
+
+    .page-description {
       display: none;
+    }
+
+    .burgermenu {
+      display: block;
+      font-size: 2.5rem;
+      position: absolute;
+      top: 40%;
+      cursor: pointer;
     }
   }
 }

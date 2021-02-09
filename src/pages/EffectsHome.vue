@@ -176,15 +176,26 @@
   }
 }
 
-.my-favorites{
+.my-favorites {
   @extend %flex-row;
+  justify-content: center;
 
-  .fav-effect{
-
-    img{
+  .fav-effect {
+    margin: 0 10px;
+    img {
       width: 70px;
       height: 70px;
       @include border-radius(50%);
+      margin: 10px;
+    }
+
+    .name {
+      font-weight: bold;
+    }
+
+    .desc {
+      font-size: 0.8rem;
+      padding: 10px 0;
     }
   }
 }

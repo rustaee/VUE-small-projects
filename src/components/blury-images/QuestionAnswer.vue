@@ -4,15 +4,16 @@
     <h1>
       {{ item.question }}
     </h1>
-    <base-button @click="changeItem()">Show me Another Fact</base-button>
+    <base-button @click="changeItem()">Show me Another Question</base-button>
   </base-card>
 
   <!-- Answer Box -->
   <base-card class="answer">
+    <div v-if="answerVisible" class="show-answer">{{ item.answer }}</div>
     <div
       class="answer-image"
       :style="{
-        'background-image': `url(../../assets/blury-images/${item.answerImage})`,
+        'background-image': `url(../../../assets/blury-images/${item.answerImage})`,
         filter: `blur(${blur}px)`
       }"
     ></div>
@@ -30,17 +31,20 @@ export default {
       loading: 0, //loading Counter
       int: null, //Interval
       loadOpacity: 1, //loading Counter Opacity
-      blur: 70
+      blur: 70,
+      answerVisible: false
     };
   },
   methods: {
     blurring() {
+      this.answerVisible = false;
       this.loading++;
       //Changing the blur and opacity in scale of loading counter
       this.loadOpacity = this.scale(this.loading, 0, 100, 1, 0);
       this.blur = this.scale(this.loading, 0, 100, 70, 0);
       if (this.loading > 99) {
         clearInterval(this.int);
+        this.answerVisible = true;
       }
     },
     scale(num, inMin, inMax, outMin, outMax) {
@@ -55,10 +59,10 @@ export default {
     }
   },
   created() {
-    this.int = setInterval(() => this.blurring(), 40);
+    this.int = setInterval(() => this.blurring(), 60);
   },
   updated() {
-    this.int = setInterval(() => this.blurring(), 40);
+    this.int = setInterval(() => this.blurring(), 60);
   }
 };
 </script>
@@ -69,6 +73,17 @@ export default {
   height: 50vh;
   padding: 0;
   position: relative;
+
+  .show-answer {
+    position: absolute;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    bottom: 2%;
+    left: 50%;
+    font-size: 2.5rem;
+    z-index: 2;
+    transform: translateX(-50%);
+  }
 }
 
 .question {

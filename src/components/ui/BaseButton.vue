@@ -38,8 +38,8 @@ a {
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   font: inherit;
-  background-color: $body;
-  border: 1px solid $border;
+  background-color: $game-base-color;
+  border: 1px solid $game-base-color;
   color: $main-background;
   cursor: pointer;
   border-radius: 30px;

@@ -1,6 +1,17 @@
 <template>
   <section class="white-container">
     <div class="main-area">
+      <div class="page-description">
+        <h1 class="title">Simple Javascript Games</h1>
+        <div class="description">
+          <p>
+            Here you can see Some of my small projects using Vue.js
+            <br />
+            Wish you a happy time :)
+          </p>
+        </div>
+        <hr />
+      </div>
       <div class="games">
         <h2 class="name">general knowledge</h2>
 
@@ -72,6 +83,36 @@
         border-color: $game-base-color;
         transition: all 0.3s ease;
       }
+    }
+  }
+}
+
+.page-description {
+  display: none;
+  text-align: center;
+  width: 100%;
+  @extend %flex-column;
+
+  .title {
+    font-family: $game-font;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  hr {
+    border: 1px solid $game-base-color;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-description {
+    display: flex;
+  }
+
+  .main-area {
+    .games {
+      width: 45%;
     }
   }
 }

@@ -1,6 +1,9 @@
 <template>
   <header>
     <section class="header-container">
+      <div class="burgermenu">
+        <font-awesome-icon class="open" icon="bars" />
+      </div>
       <div class="navigation">
         <nav>
           <ul>
@@ -88,6 +91,35 @@ header {
     opacity: 0.6;
     border: 1px solid #2d3f6f;
     @include border-radius(20px);
+  }
+}
+
+.burgermenu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    background-size: 100% auto;
+  }
+  .header-container {
+    width: 95%;
+
+    .navigation {
+      display: none;
+    }
+
+    .description {
+      width: 70%;
+    }
+
+    .burgermenu {
+      display: block;
+      font-size: 2rem;
+      position: absolute;
+      top: 10px;
+      cursor: pointer;
+    }
   }
 }
 </style>
