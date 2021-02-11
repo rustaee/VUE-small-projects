@@ -10,7 +10,6 @@ $main-background: #fff;
 $body: #9131ff;
 $border: #831bfa;
 $progress: #a0a;
-$inactivebg: #e0e0e0;
 $behind-rotate: #000;
 $rotate-circle: #ff00b3;
 $font-size: 14px;
@@ -22,11 +21,15 @@ $sidebar:  #555;
 $effect-body-bg: #000a1c;
 $effect-light-bg: #fff;
 $effect-base-color: #ffd800;
+$effect-base-color-2: #ffe760;
 $effect-footer-bg: #131a2d;
 $effect-font-color: #fff;
 $effect-light-font-color: #191b29;
-$effect-dark-font-color: #7c7e99;
+$effect-dark-font-color: #a0a1ac;
 $effect-font-family: 'PT Sans', sans-serif;
+
+//Progress bar
+$inactivebg: #8b8b8b;
 
 // ********      Games Layout     *************//
 $game-body: #f4f4f4;

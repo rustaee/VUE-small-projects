@@ -2,7 +2,7 @@
   <div
     class="panel"
     :class="{ active: active }"
-    :style="`background-image: url(../../assets/expandingcards/${url}`"
+    :style="`background-image: url(../../../assets/expandingcards/${url}`"
     @click="addActiveClass()"
   >
     <h3>{{ title }}</h3>
@@ -26,7 +26,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .panel {
-  background-size: auto 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 60vh;

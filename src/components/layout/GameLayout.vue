@@ -24,10 +24,11 @@ export default {
   min-height: 100vh;
   background-color: $game-body;
   color: $game-font-color;
-  //font-family: $game-font-family;
+  font-family: $game-font-family;
 
   .container {
     width: 100%;
+    @extend %flex-row;
   }
 }
 

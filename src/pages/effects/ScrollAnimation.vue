@@ -5,7 +5,9 @@
       ><h1>Retrieving Data from API</h1></base-loading
     >
 
-    <h1 v-if="blink < 3" :class="{ blink: blink == 2 }">Scroll to see the animation</h1>
+    <h1 v-if="blink < 3" :class="{ blink: blink == 2 }">
+      Scroll to see the animation
+    </h1>
     <post-box
       v-for="post in data"
       :title="post.strCategory"
@@ -14,11 +16,6 @@
       :key="post.idCategory"
       class="news show"
     >
-      <!-- <base-card v-for="post in data" class="news" :key="post.idCategory">
-      <div>
-        <h2>{{ post.strCategory }}</h2>
-      </div>
-    </base-card> -->
     </post-box>
   </div>
 </template>
@@ -79,8 +76,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 #scroll {
-  width: 90%;
   text-align: center;
+  width: 100%;
 }
 .news {
   transform: translateX(400%);
@@ -89,6 +86,8 @@ export default {
 
 .news:nth-of-type(even) {
   transform: translateX(-400%);
+  background: $effect-base-color;
+  color: $effect-light-font-color;
 }
 .news.show {
   transform: translateX(0);
@@ -105,18 +104,6 @@ h1.blink {
 
   100% {
     opacity: 0;
-  }
-}
-
-@media screen and(min-width: 1200px) {
-  #scroll {
-    width: 80%;
-  }
-}
-
-@media screen and(max-width: 768px) {
-  h1 {
-    font-size: 1rem;
   }
 }
 </style>

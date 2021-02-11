@@ -47,7 +47,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 33vh;
+  height: 30vh;
   flex-direction: column;
 
   &::after {
@@ -63,7 +63,7 @@ header {
 }
 
 .header-content {
-  width: 70vw;
+  width: 80vw;
   height: 70%;
   display: flex;
   flex-direction: column;
@@ -97,7 +97,6 @@ header {
 
   .page-description {
     padding: 0 20px;
-    text-align: center;
     @extend %flex-column;
 
     .title {
@@ -123,9 +122,20 @@ header {
   }
 }
 
+@media screen and (max-width: 1440px) {
+  header {
+    background-size: cover;
+    height: 25vh;
+  }
+
+  .header-content .page-description {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 768px) {
   header {
-    height: 20vh;
+    height: 18vh;
     background-size: cover;
   }
   nav {
@@ -135,10 +145,6 @@ header {
   .header-content {
     width: 90vw;
     position: relative;
-
-    .page-description {
-      display: none;
-    }
 
     .burgermenu {
       display: block;

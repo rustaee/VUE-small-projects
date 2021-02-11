@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../pages/Home.vue";
-import ProgressBar from "../pages/ProgressBar.vue"
-import ExpandingCards from "../pages/ExpandingCards.vue"
+import ProgressBar from "../pages/effects/ProgressBar.vue"
+import ExpandingCards from "../pages/effects/ExpandingCards.vue"
 import BluryImage from "../pages/games/BluryImage.vue"
-import GamesHome from "../pages/GamesHome.vue"
-import EffectsHome from "../pages/EffectsHome.vue"
+import GamesHome from "../pages/games/GamesHome.vue"
+import EffectsHome from "../pages/effects/EffectsHome.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -65,7 +65,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/scrollanimation",
     name: "Scroll",
-    component: () => import("@/pages/ScrollAnimation.vue"),
+    component: () => import("@/pages/effects/ScrollAnimation.vue"),
     meta: {
       layout: 'effect'
     }

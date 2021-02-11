@@ -1,11 +1,11 @@
 <template>
-  <base-card class="news">
+  <game-base-box class="news">
     <div class="thumb">
       <img :src="thumbnail" />
     </div>
     <h2>{{ title }}</h2>
     <div class="desc">{{ description }}</div>
-  </base-card>
+  </game-base-box>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
 
 .thumb {
   float: right;
-  width: 40%;
+  width: 25%;
 
   img {
     width: 90%;
@@ -34,26 +34,15 @@ export default {
   text-align: justify;
 }
 
-@media screen and(max-width: 550px) {
-  h2 {
-    font-size: 1rem;
-    padding: 20px 0;
-  }
-  .thumb {
-    width: 50%;
-    img {
-      width: 100%;
-    }
-  }
-
-  .desc {
-    display: none;
-  }
-}
-
 @media screen and(min-width: 1200px) {
   .desc {
     min-height: 200px;
+  }
+}
+
+@media screen and(max-width: 768px) {
+  .thumb {
+    width: 50%;
   }
 }
 </style>

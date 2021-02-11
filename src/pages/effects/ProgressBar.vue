@@ -15,14 +15,14 @@
         4
       </div>
     </div>
-    <base-card>
+    <game-base-box>
       <transition name="steps" mode="out-in">
         <Step1 v-if="currentStep == 1"></Step1>
         <Step2 v-else-if="currentStep == 2"></Step2>
         <Step3 v-else-if="currentStep == 3"></Step3>
         <Step4 v-else></Step4>
       </transition>
-    </base-card>
+    </game-base-box>
     <div>
       <button
         class="btn"
@@ -44,10 +44,10 @@
   </div>
 </template>
 <script lang="ts">
-import Step1 from "../components/progressBar/Step1.vue";
-import Step2 from "../components/progressBar/Step2.vue";
-import Step3 from "../components/progressBar/Step3.vue";
-import Step4 from "../components/progressBar/Step4.vue";
+import Step1 from "@/components/progressBar/Step1.vue";
+import Step2 from "@/components/progressBar/Step2.vue";
+import Step3 from "@/components/progressBar/Step3.vue";
+import Step4 from "@/components/progressBar/Step4.vue";
 export default {
   components: { Step1, Step2, Step3, Step4 },
   data() {
@@ -95,15 +95,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
-
 .container {
-  font-family: "Muli", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
   overflow: hidden;
   margin: 0;
   text-align: center;
@@ -132,7 +128,7 @@ export default {
 .progress {
   width: 0%;
   position: absolute;
-  background: $progress;
+  background: $effect-base-color;
   height: 4px;
   left: 0px;
   top: 50%;
@@ -141,8 +137,7 @@ export default {
 }
 
 .circle {
-  background-color: $main-background;
-  color: #999;
+  background-color: $effect-body-bg;
   border-radius: 50%;
   height: 30px;
   width: 30px;
@@ -155,20 +150,18 @@ export default {
 }
 
 .circle.active {
-  border-color: $progress;
-  color: $progress;
+  border-color: $effect-base-color;
+  color: $effect-base-color;
 }
 
 .btn {
-  background-color: $progress;
-  color: #fff;
+  background-color: $effect-base-color;
+  color: $effect-light-font-color;
   border: 0;
   border-radius: 8px;
   cursor: pointer;
-  font-family: inherit;
   padding: 10px 40px;
   margin: 5px;
-  font-size: 16px;
 }
 
 .btn:active {
@@ -181,6 +174,8 @@ export default {
 
 .btn:disabled {
   background-color: $inactivebg;
+  color: $effect-dark-font-color;
+  text-shadow: 1px 1px 1px rgb(61, 61, 61);
   cursor: not-allowed;
 }
 
@@ -192,5 +187,11 @@ export default {
 .steps-enter-from,
 .steps-leave-to {
   opacity: 0;
+}
+
+.card {
+  background: $effect-light-bg;
+  color: $effect-light-font-color;
+  min-height: 350px;
 }
 </style>

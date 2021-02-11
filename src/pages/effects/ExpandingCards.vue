@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="panel-container">
     <ImageCard
       v-for="image in images"
       :key="image.id"
@@ -78,15 +78,13 @@ export default {
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
-.container {
+.panel-container {
   font-family: "Muli", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
   margin: 0;
-  height: 80vh;
+  height: 65vh;
   width: 90%;
+  @extend %flex-row;
 }
 
 @media screen and (max-width: 768px) {

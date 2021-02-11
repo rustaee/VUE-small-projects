@@ -1,14 +1,15 @@
 <template>
   <div class="container">
     <!-- Game description -->
-    <div class="description">
-      <h1>General Knowledge</h1>
+    <base-page-description>
+      <template v-slot:title>General Knowledge</template>
       <p>
         How's your general knowledge? Let's find out. <br />
-        you have 5 seconds to answer every questions. After that, the answer
+        you have 5 seconds to answer every question. After that, the answer
         image will be clear.
       </p>
-    </div>
+    </base-page-description>
+
     <!-- Q/A boxes -->
     <div id="blury-image">
       <question-answer
@@ -147,10 +148,6 @@ export default {
   align-items: center;
   color: $font-color;
   font-family: "Exo", sans-serif;
-}
-
-.description {
-  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
