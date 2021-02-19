@@ -70,8 +70,15 @@ const routes: Array<RouteRecordRaw> = [
       layout: 'effect'
     }
   },
-
-  {
+{
+  path: "/dad-jokes",
+  name: "Joke",
+  component : () => import("@/pages/effects/DadJokes.vue"),
+  meta: {
+    layout: 'effect'
+  }
+}
+  ,{
     path: "/:catchAll(.*)",
     name: "404",
     component: () => import("@/pages/404.vue")

@@ -26,7 +26,9 @@ export default {
   color: $effect-font-color;
   font-family: $effect-font-family;
 
-  .container {
+  .container,
+  .dark-bg,
+  .light-bg {
     width: 100%;
     @extend %flex-column;
   }

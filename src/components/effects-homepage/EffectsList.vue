@@ -18,6 +18,12 @@
         <span>Scroll Animation</span>
       </router-link>
     </div>
+    <div class="effect">
+      <router-link :to="{ name: 'Joke' }">
+        <font-awesome-icon icon="laugh-squint" />
+        <span>Dad Jokes</span>
+      </router-link>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
