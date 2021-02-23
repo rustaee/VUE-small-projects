@@ -64,11 +64,11 @@ header {
 
 .header-content {
   width: 80vw;
-  height: 70%;
+  height: 85%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   color: $game-light-color;
+  overflow: hidden;
 
   nav {
     ul {
@@ -113,7 +113,7 @@ header {
       background: #000;
       opacity: 0.7;
       border-radius: 10px;
-      padding: 0 10px;
+      padding: 10px;
     }
   }
 
@@ -122,12 +122,18 @@ header {
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 2500px) {
   header {
-    background-size: cover;
-    height: 25vh;
-  }
+    font-size: 1rem;
 
+    nav {
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
   .header-content .page-description {
     display: none;
   }
@@ -135,8 +141,11 @@ header {
 
 @media screen and (max-width: 768px) {
   header {
-    height: 18vh;
-    background-size: cover;
+    height: 15vh;
+    background: url(../../../assets/game-header.png) right top no-repeat,
+      linear-gradient(to right, #141414 70%, #000 80%);
+    background-size: auto 100%;
+    overflow: visible;
   }
   nav {
     display: none;
@@ -150,7 +159,7 @@ header {
       display: block;
       font-size: 2.5rem;
       position: absolute;
-      top: 40%;
+      top: 25%;
       cursor: pointer;
     }
   }
