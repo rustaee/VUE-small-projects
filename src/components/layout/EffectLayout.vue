@@ -28,9 +28,25 @@ export default {
 
   .container,
   .dark-bg,
-  .light-bg {
+  .light-bg,
+  .second-light-bg {
     width: 100%;
     @extend %flex-column;
+  }
+
+  .dark-bg {
+    background: $effect-body-bg;
+    color: $effect-dark-font-color;
+  }
+
+  .light-bg {
+    background: $effect-base-color;
+    color: $effect-light-font-color;
+  }
+
+  .second-light-bg {
+    background: $effect-base-color-2;
+    color: $effect-light-font-color;
   }
 }
 

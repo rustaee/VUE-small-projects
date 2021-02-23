@@ -79,7 +79,8 @@ header {
       li {
         display: inline-block;
         margin-right: 20px;
-        font-family: $game-font-family;
+        font-family: $game-classic-font;
+        letter-spacing: 2px;
 
         a {
           text-decoration: none;

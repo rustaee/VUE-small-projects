@@ -14,8 +14,10 @@
   @extend %flex-column;
 
   .title {
-    font-family: $game-font;
+    font-family: $game-classic-font;
+    letter-spacing: 2px;
     font-size: 1.5rem;
+    font-weight: normal;
     margin-bottom: 0;
   }
 

@@ -101,6 +101,7 @@ header {
 @media screen and (max-width: 768px) {
   header {
     background-size: 100% auto;
+    height: 15vh;
   }
   .header-container {
     width: 95%;
@@ -110,15 +111,16 @@ header {
     }
 
     .description {
-      width: 70%;
+      display: none;
     }
 
     .burgermenu {
       display: block;
       font-size: 2rem;
       position: absolute;
-      top: 10px;
+      top: 50%;
       cursor: pointer;
+      transform: translateY(-50%);
     }
   }
 }
