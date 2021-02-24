@@ -4,6 +4,9 @@
       <div class="burgermenu">
         <font-awesome-icon class="open" icon="bars" />
       </div>
+      <div class="page-title">
+        Have fun in Javascript
+      </div>
       <div class="navigation">
         <nav>
           <ul>
@@ -17,13 +20,13 @@
           </ul>
         </nav>
       </div>
-      <div class="description">
+      <!-- <div class="description">
         <p>Here you can see some javascript fun effects.</p>
         <p>
           Any question? <br />
           Don't hesitate to contact me :)
         </p>
-      </div>
+      </div> -->
     </section>
   </header>
 </template>
@@ -94,14 +97,19 @@ header {
   }
 }
 
-.burgermenu {
+.burgermenu,
+.page-title {
   display: none;
 }
 
 @media screen and (max-width: 768px) {
   header {
     background-size: 100% auto;
-    height: 15vh;
+    background-position: center;
+    height: 10vh;
+    position: fixed;
+    z-index: 5;
+    box-shadow: 1px 0px 10px rgba(255, 255, 255, 0.8);
   }
   .header-container {
     width: 95%;
@@ -121,6 +129,15 @@ header {
       top: 50%;
       cursor: pointer;
       transform: translateY(-50%);
+    }
+
+    .page-title {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 5rem;
+      font-family: $game-headline-font;
     }
   }
 }

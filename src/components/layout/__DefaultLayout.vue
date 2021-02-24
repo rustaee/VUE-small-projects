@@ -7,12 +7,11 @@
     <Sidebar></Sidebar>
 
     <section id="container" @click="changeMenuStatus()">
-      <!-- <router-view v-slot="{ Component }">
+      <router-view v-slot="{ Component }">
         <transition name="slide" mode="out-in">
           <component :is="Component" />
         </transition>
-      </router-view> -->
-      <slot></slot>
+      </router-view>
     </section>
 
     <!-- Footer -->

@@ -18,6 +18,12 @@ export default {
 };
 </script>
 <style lang="scss">
+h1,
+h2,
+h3 {
+  font-family: $effect-headline-font;
+}
+
 #body {
   @extend %flex-column;
   width: 100vw;
@@ -57,5 +63,11 @@ export default {
 
 span.basecolor {
   color: $effect-base-color;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin-top: 10vh;
+  }
 }
 </style>

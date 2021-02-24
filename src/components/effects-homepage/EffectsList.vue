@@ -24,6 +24,12 @@
         <span>Dad Jokes</span>
       </router-link>
     </div>
+    <div class="effect">
+      <router-link :to="{ name: 'IQ' }">
+        <font-awesome-icon icon="brain" />
+        <span>IQ Fun Test</span>
+      </router-link>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -90,6 +96,12 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .effect:nth-of-type(3) {
+    display: none;
   }
 }
 </style>

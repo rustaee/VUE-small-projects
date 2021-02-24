@@ -1,9 +1,4 @@
 <template>
-  <section class="second-light-bg">
-    <div class="description">
-      <p>Here you can see some javascript fun effects.</p>
-    </div>
-  </section>
   <section class="dark-bg">
     <div class="content">
       <effects-list></effects-list>
@@ -61,12 +56,6 @@ export default {
       font-size: 0.8rem;
       padding: 10px 0;
     }
-  }
-}
-
-@media screen and (min-width: 769px) {
-  #body .second-light-bg {
-    display: none;
   }
 }
 </style>

@@ -70,14 +70,22 @@ const routes: Array<RouteRecordRaw> = [
       layout: 'effect'
     }
   },
-{
-  path: "/dad-jokes",
-  name: "Joke",
-  component : () => import("@/pages/effects/DadJokes.vue"),
-  meta: {
-    layout: 'effect'
+  {
+    path: "/dad-jokes",
+    name: "Joke",
+    component : () => import("@/pages/effects/DadJokes.vue"),
+    meta: {
+      layout: 'effect'
+    }
+  },
+  {
+    path: "/funiq",
+    name: "IQ",
+    component : () => import("@/pages/effects/FunIq.vue"),
+    meta: {
+      layout: 'effect'
+    }
   }
-}
   ,{
     path: "/:catchAll(.*)",
     name: "404",

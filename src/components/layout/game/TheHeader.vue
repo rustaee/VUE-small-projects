@@ -142,11 +142,12 @@ header {
 
 @media screen and (max-width: 768px) {
   header {
-    height: 15vh;
+    height: 12vh;
     background: url(../../../assets/game-header.png) right top no-repeat,
       linear-gradient(to right, #141414 70%, #000 80%);
     background-size: auto 100%;
     overflow: visible;
+    position: fixed;
   }
   nav {
     display: none;
