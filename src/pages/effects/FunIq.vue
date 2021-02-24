@@ -1,5 +1,5 @@
 <template>
-  <div class="iq-container">
+  <div class="content">
     <IqBox
       v-for="question in questions"
       :key="question.id"
@@ -72,8 +72,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.iq-container {
-  max-width: 600px;
-  margin: 0 auto;
+.content {
+  width: 90%;
+  @extend %flex-column;
 }
 </style>

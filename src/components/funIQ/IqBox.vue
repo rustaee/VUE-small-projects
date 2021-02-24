@@ -43,6 +43,8 @@ export default {
   position: relative;
   overflow: hidden;
   transition: 0.3s ease;
+  width: 600px;
+  max-width: 100%;
 
   .question {
     z-index: 5;

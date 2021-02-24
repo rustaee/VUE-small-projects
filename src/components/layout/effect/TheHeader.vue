@@ -42,6 +42,7 @@ header {
   background-repeat: no-repeat;
   background-position: bottom;
   position: relative;
+  box-shadow: 1px 0px 10px rgba(255, 255, 255, 0.8);
 
   &::before {
     content: "";
@@ -108,8 +109,7 @@ header {
     background-position: center;
     height: 10vh;
     position: fixed;
-    z-index: 5;
-    box-shadow: 1px 0px 10px rgba(255, 255, 255, 0.8);
+    z-index: 15;
   }
   .header-container {
     width: 95%;

@@ -1,4 +1,9 @@
 <template>
+  <base-effect-page-title>
+    <h1>
+      Here you can see some Java script fun effects.
+    </h1>
+  </base-effect-page-title>
   <section class="dark-bg">
     <div class="content">
       <effects-list></effects-list>
@@ -13,6 +18,7 @@
 <script lang="ts">
 import EffectsList from "@/components/effects-homepage/EffectsList.vue";
 import FavoriteEffects from "@/components/effects-homepage/FavoriteEffects.vue";
+
 export default {
   components: {
     "effects-list": EffectsList,

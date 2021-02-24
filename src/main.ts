@@ -13,6 +13,7 @@ import BaseButton from "./components/ui/BaseButton.vue"
 import Loading from "./components/ui/Loading.vue"
 import BasePageDescription from "./components/ui/BasePageDescription.vue"
 import BaseGameBox from "@/components/ui/BaseGameBox.vue"
+import BaseEffectPageTitle from "@/components/ui/BaseEffectPageTitle.vue";
 
 //Layouts
 import EffectLayout from "./components/layout/EffectLayout.vue"
@@ -32,4 +33,5 @@ createApp(App)
   .component('game-layout', GameLayout)
   .component('effect-layout', EffectLayout)
   .component('default-layout', Default)
+  .component("base-effect-page-title", BaseEffectPageTitle)
   .mount("#app");
