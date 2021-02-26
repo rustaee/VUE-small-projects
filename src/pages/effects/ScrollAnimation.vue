@@ -43,12 +43,10 @@ export default {
           return response.json();
         })
         .then(data => {
-          //console.log(data);
           this.data = data.categories;
           this.loading = false;
         })
         .catch(err => {
-          //console.error(err);
           this.error = err;
         });
     },

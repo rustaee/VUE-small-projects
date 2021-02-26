@@ -85,11 +85,6 @@ export default {
     progressBar() {
       return ((this.activeSteps.length - 1) / (this.steps - 1)) * 100 + "%";
     }
-  },
-  mounted() {
-    //   const actives = document.querySelectorAll(".active");
-    //   progress.style.width =
-    //     ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
   }
 };
 </script>

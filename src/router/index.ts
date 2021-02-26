@@ -85,6 +85,14 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       layout: 'effect'
     }
+  },
+  {
+    path: "/randomchoice",
+    name: "RandomChoice",
+    component : () => import("@/pages/effects/RandomChoice.vue"),
+    meta: {
+      layout: 'effect'
+    }
   }
   ,{
     path: "/:catchAll(.*)",

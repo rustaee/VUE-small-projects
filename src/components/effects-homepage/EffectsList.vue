@@ -30,6 +30,12 @@
         <span>IQ Fun Test</span>
       </router-link>
     </div>
+    <div class="effect">
+      <router-link :to="{ name: 'RandomChoice' }">
+        <font-awesome-icon icon="random" />
+        <span>Random Choice Picker </span>
+      </router-link>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>

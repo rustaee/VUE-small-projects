@@ -5,7 +5,7 @@ import store from "./store";
 //Fontawsome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faBars, faTimes, faHome, faUserAlt, faEnvelope, faSearch, faEnvelopeOpenText, faSpinner, faImages, faFan, faScroll, faLaughSquint, faBrain, faAngleDown, faComment } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes, faHome, faUserAlt, faEnvelope, faSearch, faEnvelopeOpenText, faSpinner, faImages, faFan, faScroll, faLaughSquint, faBrain, faAngleDown, faComment, faRandom } from '@fortawesome/free-solid-svg-icons'
 
 //BaseUi Components
 import BaseCard from "./components/ui/BaseCard.vue"
@@ -20,7 +20,7 @@ import EffectLayout from "./components/layout/EffectLayout.vue"
 import GameLayout from "./components/layout/GameLayout.vue"
 import Default from "./components/layout/DefaultLayout.vue"
 
-library.add(faComment,faAngleDown,faBrain,faBars,faTimes, faHome, faUserAlt, faEnvelope, faSearch,faEnvelopeOpenText, faSpinner, faImages, faFan, faScroll,faLaughSquint)
+library.add(faComment,faAngleDown,faBrain,faBars,faTimes, faHome, faUserAlt, faEnvelope, faSearch,faEnvelopeOpenText, faSpinner, faImages, faFan, faScroll,faLaughSquint,faRandom)
 createApp(App)
   .use(store)
   .use(router)
