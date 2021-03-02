@@ -1,14 +1,11 @@
 <template>
   <header>
     <section class="header-container">
-      <div class="burgermenu">
-        <font-awesome-icon class="open" icon="bars" />
-      </div>
       <div class="page-title">
         Have fun in Javascript
       </div>
       <div class="navigation">
-        <nav>
+        <nav :class="{ active: active }">
           <ul>
             <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
             <li><router-link :to="{ name: 'Home' }">About</router-link></li>
@@ -18,6 +15,10 @@
             </li>
             <li><router-link :to="{ name: 'Games' }">Games</router-link></li>
           </ul>
+          <button class="icon" @click="toggleMenu()">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+          </button>
         </nav>
       </div>
       <!-- <div class="description">
@@ -30,6 +31,20 @@
     </section>
   </header>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      active: false
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.active = !this.active;
+    }
+  }
+};
+</script>
 <style lang="scss" scoped>
 header {
   @extend %flex-column;
@@ -98,7 +113,7 @@ header {
   }
 }
 
-.burgermenu,
+.icon,
 .page-title {
   display: none;
 }
@@ -114,10 +129,6 @@ header {
   .header-container {
     width: 95%;
 
-    .navigation {
-      display: none;
-    }
-
     .description {
       display: none;
     }
@@ -132,12 +143,98 @@ header {
     }
 
     .page-title {
-      display: block;
+      display: none;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       left: 5rem;
       font-family: $game-headline-font;
+    }
+
+    nav {
+      width: 80px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      transition: width 0.6s linear;
+
+      &.active {
+        width: 100%;
+
+        ul {
+          width: 85%;
+
+          li {
+            opacity: 1;
+            transform: rotateY(360deg);
+          }
+        }
+
+        .icon .line {
+          &.line1 {
+            transform: rotate(-765deg) translateY(5.5px);
+          }
+
+          &.line2 {
+            transform: rotate(765deg) translateY(-5.5px);
+          }
+        }
+      }
+
+      ul {
+        width: 0;
+        transition: width 0.6s linear;
+        display: flex;
+        overflow: hidden;
+        margin-right: 0;
+
+        li {
+          transform: rotateY(0deg);
+          opacity: 0;
+          transition: transform 0.6s linear, opacity 0.6s linear;
+
+          a {
+            position: relative;
+            margin: 0px;
+            padding: 5px;
+          }
+        }
+      }
+
+      .icon {
+        display: block;
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        height: 30px;
+        width: 30px;
+        background: transparent;
+
+        &:focus {
+          outline: 0;
+        }
+
+        .line {
+          background-color: $effect-font-color;
+          height: 2px;
+          width: 20px;
+          position: absolute;
+          top: 10px;
+          left: 5px;
+          transition: transform 0.6s linear;
+
+          &.line2 {
+            bottom: 10px;
+            top: auto;
+          }
+        }
+      }
     }
   }
 }

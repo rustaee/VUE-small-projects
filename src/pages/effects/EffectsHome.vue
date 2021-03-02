@@ -64,4 +64,10 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  #body .second-light-bg {
+    display: none;
+  }
+}
 </style>
