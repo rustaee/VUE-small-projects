@@ -36,6 +36,12 @@
         <span>Random Choice Picker </span>
       </router-link>
     </div>
+    <div class="effect">
+      <router-link :to="{ name: 'DrinkWater' }">
+        <font-awesome-icon icon="tint" />
+        <span>Drink Water</span>
+      </router-link>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>

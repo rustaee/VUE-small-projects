@@ -93,6 +93,14 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       layout: 'effect'
     }
+  },
+  {
+    path: "/drinkwater",
+    name: 'DrinkWater',
+    component: () => import("@/pages/effects/DrinkWater.vue"),
+    meta: {
+      layout : 'effect'
+    }
   }
   ,{
     path: "/:catchAll(.*)",
